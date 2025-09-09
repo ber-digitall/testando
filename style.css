@@ -1,0 +1,519 @@
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: #f8f9fa;
+}
+
+/* Container principal */
+body > * {
+    padding: 0 1rem;
+}
+
+/* Cabeçalho */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#header h1 {
+    font-size: 2.2rem;
+    color: #333;
+    font-weight: 700;
+}
+
+#header h1 span {
+    color: #4FAF5A;
+}
+
+#header p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Navegação */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #4FAF5A;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #4FAF5A;
+}
+
+/* Seções principais */
+main section {
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 2rem 1rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #4FAF5A, #A601FD);
+    border-radius: 2px;
+}
+
+section > div > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Seção inicial */
+#home {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, rgba(79, 175, 90, 0.05) 0%, rgba(166, 1, 253, 0.05) 100%);
+    border-radius: 16px;
+    margin: 2rem auto;
+}
+
+#home h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #4FAF5A, #A601FD);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#home p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Produtos */
+#produtos > div > div,
+#mais-produtos > div > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#produtos > div > div > div,
+#mais-produtos > div > div > div {
+    padding: 2rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+#produtos > div > div > div:hover,
+#mais-produtos > div > div > div:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+#produtos h3,
+#mais-produtos h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#produtos p,
+#mais-produtos p {
+    margin-bottom: 1rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+/* Preços */
+#produtos > div > div > div > p:nth-of-type(2),
+#mais-produtos > div > div > div > p:nth-of-type(2) {
+    font-weight: bold;
+    color: #A601FD;
+    font-size: 1.3rem;
+    margin: 1rem 0;
+}
+
+/* Links de produtos */
+#produtos a,
+#mais-produtos a {
+    display: inline-block;
+    background: linear-gradient(to right, #4FAF5A, #A601FD);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(79, 175, 90, 0.3);
+}
+
+#produtos a:hover,
+#mais-produtos a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 175, 90, 0.4);
+}
+
+/* Artigos */
+#artigos > div > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+article {
+    padding: 2rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+article h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+article p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+article a {
+    display: inline-block;
+    color: #A601FD;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+article a::after {
+    content: '→';
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+article a:hover::after {
+    transform: translateX(4px);
+}
+
+article a:hover {
+    color: #4FAF5A;
+}
+
+#artigos > div > div:last-child {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#artigos > div > div:last-child a {
+    background: linear-gradient(to right, #4FAF5A, #A601FD);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 175, 90, 0.3);
+}
+
+#artigos > div > div:last-child a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 175, 90, 0.4);
+}
+
+/* Formulário de contato */
+#contato {
+    background: linear-gradient(135deg, rgba(79, 175, 90, 0.05) 0%, rgba(166, 1, 253, 0.05) 100%);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+}
+
+#contato form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+#contato form > div {
+    margin-bottom: 1.5rem;
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+#contato input,
+#contato select {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#contato input:focus,
+#contato select:focus {
+    outline: none;
+    border-color: #4FAF5A;
+    box-shadow: 0 0 0 3px rgba(79, 175, 90, 0.1);
+}
+
+/* Botões */
+button {
+    background: linear-gradient(to right, #4FAF5A, #A601FD);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(79, 175, 90, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 175, 90, 0.4);
+}
+
+#contato > div > div:last-child {
+    margin-top: 2rem;
+    text-align: center;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+#contato > div > div:last-child p {
+    margin-bottom: 0.8rem;
+    color: #666;
+}
+
+/* Rodapé */
+#footer {
+    margin-top: 4rem;
+    padding: 3rem 0;
+    background: #333;
+    color: #fff;
+}
+
+#footer > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#footer > div > div:first-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#footer h3 {
+    color: #4FAF5A;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#footer p {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+#footer ul {
+    list-style: none;
+}
+
+#footer ul li {
+    margin-bottom: 0.8rem;
+}
+
+#footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#footer a:hover {
+    color: #4FAF5A;
+}
+
+#footer > div > div:last-child {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+}
+
+#footer > div > div:last-child p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Botão do WhatsApp */
+a[target="_blank"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2.2rem;
+    transition: all 0.3s ease;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+a[target="_blank"]:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #header > div {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    #home {
+        padding: 4rem 1rem;
+    }
+    
+    #home h2 {
+        font-size: 2.2rem;
+    }
+    
+    #home p {
+        font-size: 1.1rem;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
+    
+    #produtos > div > div,
+    #mais-produtos > div > div,
+    #artigos > div > div {
+        grid-template-columns: 1fr;
+    }
+    
+    #footer > div > div:first-child {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    #contato form {
+        padding: 1.5rem;
+    }
+}
