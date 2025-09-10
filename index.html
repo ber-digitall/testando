@@ -36,6 +36,7 @@
         <!-- Seção de boas-vindas -->
         <section id="home">
             <div class="container">
+                <img src="fotoCorrendo.jpg" width="80%">
                 <h2>Bem-vindo à Atemóia Store</h2>
                 <p>Sua loja especializada em produtos de alta qualidade para corredores amadores. Encontre os melhores tênis, roupas e acessórios para melhorar sua performance.</p>
             </div>
@@ -51,14 +52,61 @@
                 </div>
             </div>
         </section>
-
-        <section id="home">
-            <div class="container">
-           <video width="100" height="100" autoplay loop muted>
-    <source src="maratona.mp4" type="video/mp4">
-</video>
+<!-- Seção de vídeo com texto -->
+<section id="video-destaque">
+    <div class="container">
+        <div class="video-texto-wrapper">
+            <!-- Vídeo à esquerda -->
+            <div class="video-container">
+                <video width="500" autoplay loop muted playsinline>
+                    <source src="maratona.mp4" type="video/mp4">
+                    <source src="maratona.webm" type="video/webm">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
             </div>
-        </section>
+            
+            <!-- Aside de texto à direita -->
+            <aside class="texto-aside">
+                <h3>Por que correr com a Atemóia Store?</h3>
+                <div class="beneficios-list">
+                    <div class="beneficio-item">
+                        <span class="beneficio-icone">🏆</span>
+                        <div class="beneficio-texto">
+                            <h4>Produtos de Alta Performance</h4>
+                            <p>Selecionamos os melhores equipamentos para maximizar seu desempenho</p>
+                        </div>
+                    </div>
+                    
+                    <div class="beneficio-item">
+                        <span class="beneficio-icone">⚡</span>
+                        <div class="beneficio-texto">
+                            <h4>Entrega Rápida</h4>
+                            <p>Receba seus produtos em até 48h nas principais capitais</p>
+                        </div>
+                    </div>
+                    
+                    <div class="beneficio-item">
+                        <span class="beneficio-icone">🛡️</span>
+                        <div class="beneficio-texto">
+                            <h4>Garantia de Qualidade</h4>
+                            <p>Todos os produtos testados e aprovados por especialistas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="beneficio-item">
+                        <span class="beneficio-icone">👟</span>
+                        <div class="beneficio-texto">
+                            <h4>Assessoria Especializada</h4>
+                            <p>Nossa equipe te ajuda a escolher o produto ideal para seu treino</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#produtos" class="btn-destaque">Ver Produtos em Destaque</a>
+            </aside>
+        </div>
+    </div>
+</section>
         <!-- Seção de produtos em destaque -->
         <section id="produtos">
             <div class="container">
