@@ -13,80 +13,91 @@ body {
     background: #f8f9fa;
 }
 
-/* Container principal */
-body > * {
-    padding: 0 1rem;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Cabeçalho */
 #header {
     background: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-#header > div {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 20px;
 }
 
-#header h1 {
-    font-size: 1.5rem;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-text h1 {
+    font-size: 1.8rem;
     color: #333;
-    font-weight: 600;
+    font-weight: 700;
+    margin: 0;
 }
 
-#header h1 span {
+.logo-text h1 span {
     color: #67DA24;
 }
 
-#header p {
+.logo-text p {
     font-size: 0.9rem;
     color: #666;
-    margin-top: 4px;
+    margin: 5px 0 0 0;
 }
 
 /* Navegação */
 nav ul {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 20px;
 }
 
 nav a {
     color: #333;
     text-decoration: none;
-    font-weight: 300;
-    border-radius: 30px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
     transition: all 0.3s ease;
-    background: transparent;
 }
 
 nav a:hover {
     background: linear-gradient(135deg, #67DA24 0%, #9B0CF2 100%);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(103, 218, 36, 0.3);
+    box-shadow: 0 4px 10px rgba(103, 218, 36, 0.3);
 }
 
 /* Seções principais */
 main section {
     margin: 4rem auto;
-    max-width: 1200px;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
 }
 
 section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
     position: relative;
+    font-weight: 700;
     padding-bottom: 15px;
-    margin-bottom: 25px;
 }
 
 section h2::after {
@@ -101,7 +112,7 @@ section h2::after {
     border-radius: 3px;
 }
 
-section > div > p {
+.section-subtitle {
     text-align: center;
     margin-bottom: 2rem;
     color: #666;
@@ -137,61 +148,48 @@ section > div > p {
 }
 
 /* Produtos */
-#produtos > div > div,
-#mais-produtos > div > div {
+.produtos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-#produtos > div > div > div,
-#mais-produtos > div > div > div {
+.produto-card {
     padding: 2rem;
     transition: all 0.3s ease;
-    height: 100%;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    display: flex;
-    flex-direction: column;
     border: 2px solid transparent;
 }
 
-#produtos > div > div > div:hover,
-#mais-produtos > div > div > div:hover {
+.produto-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     border-color: #67DA24;
 }
 
-#produtos h3,
-#mais-produtos h3 {
+.produto-card h3 {
     color: #333;
     margin-bottom: 1rem;
     font-size: 1.4rem;
     font-weight: 600;
 }
 
-#produtos p,
-#mais-produtos p {
+.produto-card p {
     margin-bottom: 1rem;
     color: #666;
-    flex-grow: 1;
 }
 
-/* Preços */
-#produtos > div > div > div > p:nth-of-type(2),
-#mais-produtos > div > div > div > p:nth-of-type(2) {
+.preco {
     font-weight: bold;
     color: #9B0CF2;
     font-size: 1.3rem;
     margin: 1rem 0;
 }
 
-/* Links de produtos */
-#produtos a,
-#mais-produtos a {
+.btn-produto {
     display: inline-block;
     background: linear-gradient(to right, #67DA24, #9B0CF2);
     color: white;
@@ -200,82 +198,74 @@ section > div > p {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-top: auto;
     text-align: center;
     box-shadow: 0 4px 15px rgba(103, 218, 36, 0.3);
 }
 
-#produtos a:hover,
-#mais-produtos a:hover {
+.btn-produto:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(103, 218, 36, 0.4);
 }
 
 /* Artigos */
-#artigos > div > div {
+.artigos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-article {
+.artigo-card {
     padding: 2rem;
     transition: all 0.3s ease;
-    height: 100%;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     border: 2px solid transparent;
 }
 
-article:hover {
+.artigo-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     border-color: #9B0CF2;
 }
 
-article h3 {
+.artigo-card h3 {
     color: #333;
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 600;
 }
 
-article p {
+.data-publicacao {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.artigo-card p {
     margin-bottom: 1rem;
     color: #666;
 }
 
-article a {
+.btn-leia-mais {
     display: inline-block;
     color: #9B0CF2;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    position: relative;
 }
 
-article a::after {
-    content: '→';
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-article a:hover::after {
-    transform: translateX(4px);
-}
-
-article a:hover {
+.btn-leia-mais:hover {
     color: #67DA24;
 }
 
-#artigos > div > div:last-child {
+.ver-mais-container {
     text-align: center;
     margin-top: 3rem;
 }
 
-#artigos > div > div:last-child a {
+.btn-ver-mais {
     background: linear-gradient(to right, #67DA24, #9B0CF2);
     padding: 1rem 2rem;
     border-radius: 30px;
@@ -285,7 +275,7 @@ article a:hover {
     box-shadow: 0 4px 15px rgba(103, 218, 36, 0.3);
 }
 
-#artigos > div > div:last-child a:hover {
+.btn-ver-mais:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(103, 218, 36, 0.4);
 }
@@ -297,28 +287,24 @@ article a:hover {
     padding: 3rem 2rem;
 }
 
-#contato form {
+.contato-content {
     max-width: 600px;
     margin: 0 auto;
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-#contato form > div {
+.form-group {
     margin-bottom: 1.5rem;
 }
 
-#contato label {
+.form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: #333;
 }
 
-#contato input,
-#contato select {
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 1rem;
     border-radius: 8px;
@@ -329,15 +315,14 @@ article a:hover {
     transition: all 0.3s ease;
 }
 
-#contato input:focus,
-#contato select:focus {
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
     border-color: #67DA24;
     box-shadow: 0 0 0 3px rgba(103, 218, 36, 0.1);
 }
 
-/* Botões */
-button {
+.btn-whatsapp {
     background: linear-gradient(to right, #67DA24, #9B0CF2);
     color: white;
     border: none;
@@ -351,23 +336,21 @@ button {
     box-shadow: 0 4px 15px rgba(103, 218, 36, 0.3);
 }
 
-button:hover {
+.btn-whatsapp:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(103, 218, 36, 0.4);
 }
 
-#contato > div > div:last-child {
+.contato-info {
     margin-top: 2rem;
     text-align: center;
     background: #fff;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    max-width: 600px;
-    margin: 2rem auto 0;
 }
 
-#contato > div > div:last-child p {
+.contato-info p {
     margin-bottom: 0.8rem;
     color: #666;
 }
@@ -380,93 +363,94 @@ button:hover {
     color: #fff;
 }
 
-#footer > div {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-#footer > div > div:first-child {
+.footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
 
-#footer h3 {
+.footer-section h3 {
     color: #67DA24;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     font-weight: 600;
 }
 
-#footer p {
+.footer-section p {
     color: #ccc;
     margin-bottom: 1rem;
 }
 
-#footer ul {
+.footer-section ul {
     list-style: none;
 }
 
-#footer ul li {
+.footer-section ul li {
     margin-bottom: 0.8rem;
 }
 
-#footer a {
+.footer-section a {
     color: #ccc;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-#footer a:hover {
+.footer-section a:hover {
     color: #67DA24;
 }
 
-#footer > div > div:last-child {
+.footer-bottom {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid #444;
 }
 
-#footer > div > div:last-child p {
+.footer-bottom p {
     color: #999;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Botão do WhatsApp */
-a[target="_blank"] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 2.2rem;
-    transition: all 0.3s ease;
-    width: 60px;
-    height: 60px;
-    background: #25d366;
-    color: white;
-    border-radius: 50%;
+.whatsapp-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
 }
 
-a[target="_blank"]:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+.whatsapp-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Responsividade */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Responsividade para mobile */
 @media (max-width: 768px) {
-    #header > div {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
     }
-    
+}
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -489,18 +473,17 @@ a[target="_blank"]:hover {
         font-size: 2rem;
     }
     
-    #produtos > div > div,
-    #mais-produtos > div > div,
-    #artigos > div > div {
+    .produtos-grid,
+    .artigos-grid {
         grid-template-columns: 1fr;
     }
     
-    #footer > div > div:first-child {
+    .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
     
-    #contato form {
+    .contato-content {
         padding: 1.5rem;
     }
 }
